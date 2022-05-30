@@ -114,11 +114,13 @@ const pokeSpeed = (speed) =>{
 }
 const pokeHeight = (height) =>{
     const pokeHeight = document.getElementById("pokeHeight");
-    pokeHeight.textContent = height + " CM";
+    let reduceCheck = height*0.1;
+    pokeHeight.textContent = reduceCheck + "M";
 }
 const pokeWeight = (weight) =>{
     const pokeWeight = document.getElementById("pokeWeight");
-    pokeWeight.textContent = weight + " KG";
+    let reduceCheck = weight*0.1; 
+    pokeWeight.textContent = reduceCheck + " KG";
 }
 
 
