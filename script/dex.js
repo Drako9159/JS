@@ -48,7 +48,7 @@ const movesPoke = (moves) => {
     $movesPoke.textContent = moves.toUpperCase();
 }
 
-const count = 1;
+let count = 1;
 function pokeMov(){
     document.getElementById("lumine0").style.backgroundColor="rgb(255, 0, 0)";
     document.getElementById("lumine1").style.backgroundColor="rgb(255, 208, 0)";
