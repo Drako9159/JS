@@ -1,6 +1,6 @@
 const fetchPokemon = () => {
-    const pokeNameInput = document.getElementById("pokeName");
-    let pokeName = pokeNameInput.value;
+    const $pokeNameInput = document.getElementById("pokeName");
+    let pokeName = $pokeNameInput.value;
     pokeName = pokeName.toLowerCase();
     const url = `https://pokeapi.co/api/v2/pokemon/${pokeName}`;
     fetch(url).then((res) =>{
@@ -8,13 +8,12 @@ const fetchPokemon = () => {
             pokeImage("https://media4.giphy.com/media/OazoCyXHeGyDm/200.webp?cid=ecf05e47xk1rxsk5f9bwi72caro1zr6b2kugzq197upe5n6y&rid=200.webp&ct=g");
             sinResultados = document.getElementById("pokemon");
             sinResultados.textContent = "SIN RESULTADOS";
-        } 
-        else {
+        } else {
             return res.json();
         }
     }).then((data) =>{
         if(data){
-        console.log(data);
+        
         let hp = data.stats[0].base_stat;
         let attack = data.stats[1].base_stat;
         let defense = data.stats[2].base_stat;
@@ -23,7 +22,6 @@ const fetchPokemon = () => {
         let speed = data.stats[5].base_stat;
         let pokeImg = data.sprites.other.home.front_default;
         //let pokeImg = data.sprites.front_default;//
-       
         let type = data.types[0].type.name;
         let height = data.height;
         let weight = data.weight;
@@ -46,11 +44,11 @@ const fetchPokemon = () => {
     });
 }
 const movesPoke = (moves) => {
-    const movesPoke = document.getElementById("pokeMoves");
-    movesPoke.textContent = moves.toUpperCase();
+    const $movesPoke = document.getElementById("pokeMoves");
+    $movesPoke.textContent = moves.toUpperCase();
 }
 
-let count = 1;
+const count = 1;
 function pokeMov(){
     document.getElementById("lumine0").style.backgroundColor="rgb(255, 0, 0)";
     document.getElementById("lumine1").style.backgroundColor="rgb(255, 208, 0)";
@@ -67,12 +65,8 @@ function pokeMov(){
             let movesPoke = document.getElementById("pokeMoves");
             movesPoke.textContent = moves.toUpperCase();
             count = count + 1;
-            
-
-
         }
     })
-    
 }
 
 
